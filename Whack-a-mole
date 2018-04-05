@@ -1,1 +1,17 @@
+#julia golder
+#4/5/18
+#whackamole
 
+
+
+
+
+
+
+#graphics
+    
+    scoreBox = TextAsset('Score = 0')
+    
+    data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
+
+    scoreBox = TextAsset('Score = 0')

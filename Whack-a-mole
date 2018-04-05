@@ -14,9 +14,14 @@ whiteCircle = CircleAsset(100,blackOutline,white) #radius, outline, fill
 
 Sprite(whiteCircle,(75,75))
 Sprite(whiteCircle,(325,75))
-Sprite(whiteCircle,(350,75))
-Sprite(whiteCircle,(75, 250))
+Sprite(whiteCircle,(575,75))
+Sprite(whiteCircle,(75, 325))
+Sprite(whiteCircle,(325, 325))
+Sprite(whiteCircle,(575, 325))
 App().run()
+
+
+
 
 """
 #moves mole to a random location

@@ -13,7 +13,7 @@ COLS = 40
 CELL_SIZE = 20
 
 
-#moves mole to a random location    
+#moves mole to a random location
 def moveBanana():
     data['frames'] = 0 #reset timer
     banana.x = randint(0,COLS-1)*CELL_SIZE
@@ -26,7 +26,7 @@ def updateScore():
     scoreBox = TextAsset('Score =' +str(data['score']))
     data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
 
-#keeps track of how many frames have happened and moves banana if it has
+#keeps track of how many frames have happened and moves mole if it has
 #been more than 300 frames since last move
 def step():
     data['frames'] +=1
@@ -42,26 +42,21 @@ if __name__ == '__main__':
     data['frames'] = 0
 
     #colors
-    green = Color(0x006600, 1)
-    brown = Color(0x8B4513, 1)
+    moleColor = Color(0x8B4513, 1)
+    ground = Color(0xF4A460, 1)
     yellow = Color(0xFFFF00,1)
     
     #graphics
     jungleBox = RectangleAsset(CELL_SIZE*COLS, CELL_SIZE*ROWS, LineStyle(1,green),green)
-    monkeyBox = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,brown),brown)
-    bananaBox = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
+    moleBox = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,ground),ground)
     scoreBox = TextAsset('Score = 0')
     
     
     Sprite(jungleBox)
-    monkey = Sprite(monkeyBox)
-    banana = Sprite(bananaBox,(CELL_SIZE*COLS/2, CELL_SIZE*ROWS/2))
+    mole = Sprite(moleBox,(CELL_SIZE*COLS/2, CELL_SIZE*ROWS/2))
     data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
     
-    App().listenKeyEvent('keydown', 'right arrow',moveRight)
-    App().listenKeyEvent('keydown', 'left arrow',moveLeft)
-    App().listenKeyEvent('keydown', 'down arrow',moveDown)
-    App().listenKeyEvent('keydown', 'up arrow',moveUp)
+
     App().run(step)
 
 
@@ -72,15 +67,3 @@ updateScore - Should take no arguments. The function should erase the old score 
 step - Should take no arguments. The function should go through each hole and randomly decide if a mole should be up or down in that hole. This function should also keep track of how many frames have passed and stop the game after a certain amount of time.
 
 if __name__ == '__main__': This isn't really a function, but the rest of your code should be in this section (except any constants that you use). You will definitely need some dictionary variables.
-
-
-
-
-
-#graphics
-    
-    scoreBox = TextAsset('Score = 0')
-    
-    data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
-
-    scoreBox = TextAsset('Score = 0')

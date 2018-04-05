@@ -12,6 +12,8 @@ white = Color(0xFFFFFF,1)
 blackOutline = LineStyle(1,black)
 whiteCircle = CircleAsset(100,blackOutline,white) #radius, outline, fill
 
+
+
 Sprite(whiteCircle,(75,75))
 Sprite(whiteCircle,(325,75))
 Sprite(whiteCircle,(575,75))

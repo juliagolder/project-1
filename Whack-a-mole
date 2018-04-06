@@ -15,13 +15,12 @@ whiteCircle = CircleAsset(100,blackOutline,white) #radius, outline, fill
 brownOutline = LineStyle(1,brown)
 mole = CircleAsset(90, brownOutline, brown)
 
+
 def mouseClick(event):
-    if click == mole
-        mole.x = randint(0,COLS-1)*CELL_SIZE
-        mole.y = randint(0,ROWS-1)*CELL_SIZE
-    else:
+    print(event.x , event.y)
         
 
+"""
 def updateScore():
     data['score'] += 10
     data['scoreText'].destroy() #remove old writing
@@ -31,6 +30,8 @@ def updateScore():
 #hold variables in a dictionary
     data = {}
     data['score'] = 0
+"""
+
 
 Sprite(whiteCircle,(75,75))
 Sprite(whiteCircle,(325,75))
@@ -39,13 +40,13 @@ Sprite(whiteCircle,(75, 325))
 Sprite(whiteCircle,(325, 325))
 Sprite(whiteCircle,(575, 325))
 App().listenMouseEvent('click', mouseClick)
-data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
 App().run()
 App().run()
 
 
 
 """
+data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
 Mole = CircleAsset(100,blackOutline,white)
 """
 """

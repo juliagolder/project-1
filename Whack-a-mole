@@ -13,18 +13,18 @@ blackOutline = LineStyle(1,black)
 whiteCircle = CircleAsset(100,blackOutline,white) #radius, outline, fill
 
 
-#function to change color of window
 def mouseClick(event):
     
-num = randint(1,4)
-if num == 1:
-color = red
-elif num == 2:
-color = green
-elif num == 3:
-color = blue
-else:
-color = yellow
+
+def updateScore():
+    data['score'] += 10
+    data['scoreText'].destroy() #remove old writing
+    scoreBox = TextAsset('Score =' +str(data['score']))
+    data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
+    
+#hold variables in a dictionary
+    data = {}
+    data['score'] = 0
 
 Sprite(whiteCircle,(75,75))
 Sprite(whiteCircle,(325,75))

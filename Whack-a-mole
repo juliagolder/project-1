@@ -9,10 +9,16 @@ from random import randint
 blue = Color(0x0000FF,1)
 white = Color(0xFFFFFF,1)
 
+brownOutline = LineStyle(1,
 blackOutline = LineStyle(1,black)
 whiteCircle = CircleAsset(100,blackOutline,white) #radius, outline, fill
 
+Mole = CircleAsset(100,blackOutline,white)
 
+def moveMole():
+    data['frames'] = 0 #reset timer
+    banana.x = randint(0,COLS-1)*CELL_SIZE
+    banana.y = randint(0,ROWS-1)*CELL_SIZE
 
 Sprite(whiteCircle,(75,75))
 Sprite(whiteCircle,(325,75))

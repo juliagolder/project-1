@@ -20,6 +20,10 @@ def mouseClick(event):
     print(event.x , event.y)
     if event.x > 75 and event.x < 175 and event.y > 75 and event.y > 175:
         print ("circle1")
+    elif event.x > 325 and event.x < 525 and event.y > 75 and event.y > 175:
+        print ("circle2")
+    elif event.x > 325 and event.x < 525 and event.y > 75 and event.y > 175:
+
     
 
 """

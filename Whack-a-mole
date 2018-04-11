@@ -33,6 +33,8 @@ def mouseClick(event):
     else:
         print("not a circle")
 
+
+
 Sprite(whiteCircle,(75,75))
 Sprite(whiteCircle,(325,75))
 Sprite(whiteCircle,(575,75))

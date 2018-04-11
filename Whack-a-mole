@@ -30,6 +30,8 @@ def mouseClick(event):
         print ("circle5")
     elif event.x > 575 and event.x < 775 and event.y > 325 and event.y < 525:
         print ("circle6")
+    else:
+        print("not a circle")
 
 Sprite(whiteCircle,(75,75))
 Sprite(whiteCircle,(325,75))

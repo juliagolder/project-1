@@ -22,15 +22,30 @@ def mouseClick(event):
         print ("circle1")
     elif event.x > 325 and event.x < 525 and event.y > 75 and event.y > 175:
         print ("circle2")
-    elif event.x > 325 and event.x < 525 and event.y > 75 and event.y > 175:
+    elif event.x > 675 and event.x < 525 and event.y > 75 and event.y > 175:
+        print ("circle3")
+    elif event.x > 75 and event.x < 175 and event.y > 325 and event.y > 525:
+        print ("circle4")
+    elif event.x > 325 and event.x < 525 and event.y > 325 and event.y > 525:
+        print ("circle5")
+    elif event.x > 675 and event.x < 525 and event.y > 325 and event.y > 525:
+        print ("circle6")
 
-    
+Sprite(whiteCircle,(75,75))
+Sprite(whiteCircle,(325,75))
+Sprite(whiteCircle,(575,75))
+Sprite(whiteCircle,(75, 325))
+Sprite(whiteCircle,(325, 325))
+Sprite(whiteCircle,(575, 325))
+App().listenMouseEvent('click', mouseClick)
+App().run()
+App().run()
+
 
 """
 if mouse Click > (76.00813202583113, 178.9708265802269) and < (275.62544845730685, 173.85737439222044) and < 176.3286295144702 75.67909238249595
-"""
 
-"""
+
 if num > 0:
     print(num, 'is positive')
 elif num < 0:
@@ -38,9 +53,7 @@ elif num < 0:
 else:
     print(num, 'is zero')
     
-"""
 
-"""
 171.21023678545802 275.1037277147488
 324.76201865582397 176.92544570502432
 420.98780196125324 77.72447325769855
@@ -62,9 +75,8 @@ else:
 670.7653671370485 322.14748784440843
 773.1332217172925 415.2123176661264
 677.9311169576656 521.5721231766613
-"""
 
-"""
+
 def updateScore():
     data['score'] += 10
     data['scoreText'].destroy() #remove old writing
@@ -74,26 +86,13 @@ def updateScore():
 #hold variables in a dictionary
     data = {}
     data['score'] = 0
-"""
 
 
-Sprite(whiteCircle,(75,75))
-Sprite(whiteCircle,(325,75))
-Sprite(whiteCircle,(575,75))
-Sprite(whiteCircle,(75, 325))
-Sprite(whiteCircle,(325, 325))
-Sprite(whiteCircle,(575, 325))
-App().listenMouseEvent('click', mouseClick)
-App().run()
-App().run()
-
-
-
-"""
 data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
 Mole = CircleAsset(100,blackOutline,white)
-"""
-"""
+
+
+
 #moves mole to a random location
 def moveMole():
     data['frames'] = 0 #reset timer
@@ -131,9 +130,9 @@ if __name__ == '__main__':
 
 
     App().run()
-"""
 
-"""  
+
+ 
  #graphics
     jungleBox = RectangleAsset(CELL_SIZE*COLS, CELL_SIZE*ROWS, LineStyle(1,ground),ground)
     moleBox = CircleAsset(RADIUS,LineStyle(1,moleColor),moleColor)
@@ -151,4 +150,3 @@ if __name__ == '__main__':
 
     App().run(step)
 """
-

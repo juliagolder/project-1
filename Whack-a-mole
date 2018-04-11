@@ -18,17 +18,17 @@ mole = CircleAsset(90, brownOutline, brown)
 
 def mouseClick(event):
     print(event.x , event.y)
-    if event.x > 75 and event.x < 175 and event.y > 75 and event.y > 175:
+    if event.x > 75 and event.x < 275 and event.y > 75 and event.y < 275:
         print ("circle1")
-    elif event.x > 325 and event.x < 525 and event.y > 75 and event.y > 175:
+    elif event.x > 325 and event.x < 525 and event.y > 75 and event.y < 275:
         print ("circle2")
-    elif event.x > 675 and event.x < 525 and event.y > 75 and event.y > 175:
+    elif event.x > 575 and event.x < 775 and event.y > 75 and event.y < 275:
         print ("circle3")
-    elif event.x > 75 and event.x < 175 and event.y > 325 and event.y > 525:
+    elif event.x > 75 and event.x < 275 and event.y > 325 and event.y < 525:
         print ("circle4")
-    elif event.x > 325 and event.x < 525 and event.y > 325 and event.y > 525:
+    elif event.x > 325 and event.x < 525 and event.y > 325 and event.y < 525:
         print ("circle5")
-    elif event.x > 675 and event.x < 525 and event.y > 325 and event.y > 525:
+    elif event.x > 575 and event.x < 775 and event.y > 325 and event.y < 525:
         print ("circle6")
 
 Sprite(whiteCircle,(75,75))

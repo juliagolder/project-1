@@ -13,8 +13,23 @@ brown = Color(0x8B4513, 1)
 blackOutline = LineStyle(1,black)
 whiteCircle = CircleAsset(100,blackOutline,white) #radius, outline, fill
 brownOutline = LineStyle(1,brown)
-mole = CircleAsset(90, brownOutline, brown)
+mole = CircleAsset(100, brownOutline, brown)
 
+num = randint(1,10)
+
+def randomMole():
+    if num > 8:
+        Sprite(mole,(75,75))
+    elif num < 8:
+        Sprite(mole,(325,75))
+    else:
+        print('MISSED!')
+        
+def moveMole():
+    data['frames'] = 0 #reset timer
+    banana.x = randint(0,COLS-1)*CELL_SIZE
+    banana.y = randint(0,ROWS-1)*CELL_SIZE       
+    
 
 def mouseClick(event):
     print(event.x , event.y)
@@ -33,6 +48,9 @@ def mouseClick(event):
     else:
         print("not a circle")
 
+def step():
+    randomMole()
+    
 
 Sprite(whiteCircle,(75,75))
 Sprite(whiteCircle,(325,75))
@@ -41,8 +59,7 @@ Sprite(whiteCircle,(75, 325))
 Sprite(whiteCircle,(325, 325))
 Sprite(whiteCircle,(575, 325))
 App().listenMouseEvent('click', mouseClick)
-App().run()
-App().run()
+App().run(step)
 
 
 """

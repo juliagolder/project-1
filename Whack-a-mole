@@ -33,6 +33,7 @@ def randomMole():
     else:
         print('MISSED!')
 
+
     
 
 def mouseClick(event):

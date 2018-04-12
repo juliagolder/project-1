@@ -15,20 +15,24 @@ whiteCircle = CircleAsset(100,blackOutline,white) #radius, outline, fill
 brownOutline = LineStyle(1,brown)
 mole = CircleAsset(100, brownOutline, brown)
 
-num = randint(1,10)
+num = randint(1,15)
 
 def randomMole():
-    if num > 8:
+    if num >= 13:
         Sprite(mole,(75,75))
-    elif num < 8:
+    elif num <= 12 and num >= 10:
         Sprite(mole,(325,75))
+    elif num <= 9 and num >= 7:
+        Sprite(mole,(575,75))
+    elif num == 6:
+        Sprite(mole,(75,325))
+    elif num <= 5 and num >= 3:
+        Sprite(mole,(325,325))
+    elif num <= 2 and num > 0:
+        Sprite(mole,(575,325))
     else:
         print('MISSED!')
-        
-def moveMole():
-    data['frames'] = 0 #reset timer
-    banana.x = randint(0,COLS-1)*CELL_SIZE
-    banana.y = randint(0,ROWS-1)*CELL_SIZE       
+
     
 
 def mouseClick(event):
@@ -50,7 +54,22 @@ def mouseClick(event):
 
 def step():
     randomMole()
-    
+"""
+ #increase score and display new text at bottom of screen
+def updateScore():
+    data['score'] += 10
+    data['scoreText'].destroy() #remove old writing
+    scoreBox = TextAsset('Score =' +str(data['score']))
+    data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
+
+#sets up and runs the game
+if __name__ == '__main__':
+
+    #hold variables in a dictionary
+    data = {}
+    data['score'] = 0
+    data['frames'] = 0
+"""
 
 Sprite(whiteCircle,(75,75))
 Sprite(whiteCircle,(325,75))

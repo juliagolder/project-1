@@ -109,6 +109,7 @@ if __name__ == '__main__':
     Sprite(whiteCircle,(75, 325))
     Sprite(whiteCircle,(325, 325))
     Sprite(whiteCircle,(575, 325))
+    data['scoreText'] = Sprite(scoreBox,(0,100))
     App().listenMouseEvent('click', mouseClick)
     App().run(step)
 

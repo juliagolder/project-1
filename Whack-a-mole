@@ -78,7 +78,9 @@ def mouseClick(event):
 def step():
     if data['frames'] % 50 == 0 and data['frames'] < 1000:
         randomMole()
-    
+    if data['frames'] == 1000:
+        win = TextAsset('YOU WIN!!')
+        Sprite(win, (200,575))
 
     data['frames'] += 1
 

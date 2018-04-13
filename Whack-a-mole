@@ -57,19 +57,23 @@ def randomMole():
 def mouseClick(event):
     print(event.x , event.y)
     if event.x > 75 and event.x < 275 and event.y > 75 and event.y < 275:
-        print ("circle1")
+        if data ['moleUp'] == 1:
+            updateScore()
     elif event.x > 325 and event.x < 525 and event.y > 75 and event.y < 275:
-        print ("circle2")
+        if data ['moleUp'] == 2:
+            updateScore()
     elif event.x > 575 and event.x < 775 and event.y > 75 and event.y < 275:
-        print ("circle3")
+        if data ['moleUp'] == 3:
+            updateScore()
     elif event.x > 75 and event.x < 275 and event.y > 325 and event.y < 525:
-        print ("circle4")
+        if data ['moleUp'] == 4:
+            updateScore()
     elif event.x > 325 and event.x < 525 and event.y > 325 and event.y < 525:
-        print ("circle5")
+        if data ['moleUp'] == 5:
+            updateScore()
     elif event.x > 575 and event.x < 775 and event.y > 325 and event.y < 525:
-        print ("circle6")
-    else:
-        print("not a circle")
+        if data ['moleUp'] == 6:
+            updateScore()
 
 def step():
     if data['frames'] % 25 == 0:
@@ -77,14 +81,16 @@ def step():
 
     data['frames'] += 1
 
-"""
+
+
  #increase score and display new text at bottom of screen
 def updateScore():
     data['score'] += 10
     data['scoreText'].destroy() #remove old writing
     scoreBox = TextAsset('Score =' +str(data['score']))
     data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
-"""
+
+
 #sets up and runs the game
 
 if __name__ == '__main__':
@@ -94,6 +100,7 @@ if __name__ == '__main__':
     data['score'] = 0
     data['frames'] = 0
     data['moleUp'] = 0
+    scoreBox = TextAsset('Score = 0')
 
 
     Sprite(whiteCircle,(75,75))

@@ -55,7 +55,6 @@ def randomMole():
     
 
 def mouseClick(event):
-    print(event.x , event.y)
     if event.x > 75 and event.x < 275 and event.y > 75 and event.y < 275:
         if data ['moleUp'] == 1:
             updateScore()

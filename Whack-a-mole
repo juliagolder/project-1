@@ -22,26 +22,32 @@ def randomMole():
     num = randint(1,15)
     if num >= 13:
         Sprite(mole,(75,75))
+        data ['moleUp'] = 1
     else:
         Sprite(whiteCircle,(75,75))
     if num <= 12 and num >= 10:
         Sprite(mole,(325,75))
+        data ['moleUp'] = 2
     else:
         Sprite(whiteCircle,(325,75))
     if num <= 9 and num >= 7:
         Sprite(mole,(575,75))
+        data ['moleUp'] = 3
     else:
         Sprite(whiteCircle,(575,75))
     if num == 6:
         Sprite(mole,(75,325))
+        data ['moleUp'] = 4
     else:
         Sprite(whiteCircle,(75,325))
     if num <= 5 and num >= 3:
         Sprite(mole,(325,325))
+        data ['moleUp'] = 5
     else:
         Sprite(whiteCircle,(325,325))
     if num <= 2 and num > 0:
         Sprite(mole,(575,325))
+        data ['moleUp'] = 6
     else:
         Sprite(whiteCircle,(575,325))
 
@@ -87,6 +93,7 @@ if __name__ == '__main__':
     data = {}
     data['score'] = 0
     data['frames'] = 0
+    data['moleUp'] = 0
 
 
     Sprite(whiteCircle,(75,75))

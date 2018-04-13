@@ -66,9 +66,10 @@ def mouseClick(event):
         print("not a circle")
 
 def step():
-    randomMole()
+    if data['frames'] % 25 == 0:
+        randomMole()
 
-
+    data['frames'] += 1
 
 """
  #increase score and display new text at bottom of screen
@@ -77,24 +78,25 @@ def updateScore():
     data['scoreText'].destroy() #remove old writing
     scoreBox = TextAsset('Score =' +str(data['score']))
     data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
-
+"""
 #sets up and runs the game
+
 if __name__ == '__main__':
 
     #hold variables in a dictionary
     data = {}
     data['score'] = 0
     data['frames'] = 0
-"""
 
-Sprite(whiteCircle,(75,75))
-Sprite(whiteCircle,(325,75))
-Sprite(whiteCircle,(575,75))
-Sprite(whiteCircle,(75, 325))
-Sprite(whiteCircle,(325, 325))
-Sprite(whiteCircle,(575, 325))
-App().listenMouseEvent('click', mouseClick)
-App().run(step)
+
+    Sprite(whiteCircle,(75,75))
+    Sprite(whiteCircle,(325,75))
+    Sprite(whiteCircle,(575,75))
+    Sprite(whiteCircle,(75, 325))
+    Sprite(whiteCircle,(325, 325))
+    Sprite(whiteCircle,(575, 325))
+    App().listenMouseEvent('click', mouseClick)
+    App().run(step)
 
 
 """

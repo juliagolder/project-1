@@ -15,23 +15,35 @@ whiteCircle = CircleAsset(100,blackOutline,white) #radius, outline, fill
 brownOutline = LineStyle(1,brown)
 mole = CircleAsset(100, brownOutline, brown)
 
-num = randint(1,15)
+
+
 
 def randomMole():
+    num = randint(1,15)
     if num >= 13:
         Sprite(mole,(75,75))
-    elif num <= 12 and num >= 10:
+    else:
+        Sprite(whiteCircle,(75,75))
+    if num <= 12 and num >= 10:
         Sprite(mole,(325,75))
-    elif num <= 9 and num >= 7:
+    else:
+        Sprite(whiteCircle,(325,75))
+    if num <= 9 and num >= 7:
         Sprite(mole,(575,75))
-    elif num == 6:
+    else:
+        Sprite(whiteCircle,(575,75))
+    if num == 6:
         Sprite(mole,(75,325))
-    elif num <= 5 and num >= 3:
+    else:
+        Sprite(whiteCircle,(75,325))
+    if num <= 5 and num >= 3:
         Sprite(mole,(325,325))
-    elif num <= 2 and num > 0:
+    else:
+        Sprite(whiteCircle,(325,325))
+    if num <= 2 and num > 0:
         Sprite(mole,(575,325))
     else:
-        print('MISSED!')
+        Sprite(whiteCircle,(575,325))
 
 
     

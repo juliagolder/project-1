@@ -55,28 +55,30 @@ def randomMole():
     
 
 def mouseClick(event):
-    if event.x > 75 and event.x < 275 and event.y > 75 and event.y < 275:
-        if data ['moleUp'] == 1:
-            updateScore()
-    elif event.x > 325 and event.x < 525 and event.y > 75 and event.y < 275:
-        if data ['moleUp'] == 2:
-            updateScore()
-    elif event.x > 575 and event.x < 775 and event.y > 75 and event.y < 275:
-        if data ['moleUp'] == 3:
-            updateScore()
-    elif event.x > 75 and event.x < 275 and event.y > 325 and event.y < 525:
-        if data ['moleUp'] == 4:
-            updateScore()
-    elif event.x > 325 and event.x < 525 and event.y > 325 and event.y < 525:
-        if data ['moleUp'] == 5:
-            updateScore()
-    elif event.x > 575 and event.x < 775 and event.y > 325 and event.y < 525:
-        if data ['moleUp'] == 6:
-            updateScore()
+    if data['frames'] < 1000:
+        if event.x > 75 and event.x < 275 and event.y > 75 and event.y < 275:
+            if data ['moleUp'] == 1:
+                updateScore()
+        elif event.x > 325 and event.x < 525 and event.y > 75 and event.y < 275:
+            if data ['moleUp'] == 2:
+                updateScore()
+        elif event.x > 575 and event.x < 775 and event.y > 75 and event.y < 275:
+            if data ['moleUp'] == 3:
+                updateScore()
+        elif event.x > 75 and event.x < 275 and event.y > 325 and event.y < 525:
+            if data ['moleUp'] == 4:
+                updateScore()
+        elif event.x > 325 and event.x < 525 and event.y > 325 and event.y < 525:
+            if data ['moleUp'] == 5:
+                updateScore()
+        elif event.x > 575 and event.x < 775 and event.y > 325 and event.y < 525:
+            if data ['moleUp'] == 6:
+                updateScore()
 
 def step():
-    if data['frames'] % 50 == 0:
+    if data['frames'] % 50 == 0 and data['frames'] < 1000:
         randomMole()
+    
 
     data['frames'] += 1
 

@@ -55,6 +55,9 @@ def mouseClick(event):
 
 def step():
     randomMole()
+
+
+
 """
  #increase score and display new text at bottom of screen
 def updateScore():

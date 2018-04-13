@@ -6,18 +6,18 @@
 from ggame import *
 from random import randint
 
+#colors
 blue = Color(0x0000FF,1)
 white = Color(0xFFFFFF,1)
 brown = Color(0x8B4513, 1)
 
+#graphics
 blackOutline = LineStyle(1,black)
-whiteCircle = CircleAsset(100,blackOutline,white) #radius, outline, fill
+whiteCircle = CircleAsset(100,blackOutline,white)
 brownOutline = LineStyle(1,brown)
 mole = CircleAsset(100, brownOutline, brown)
 
-
-
-
+#making mole popup in random place
 def randomMole():
     num = randint(1,15)
     if num >= 13:
@@ -53,7 +53,7 @@ def randomMole():
 
 
     
-
+#clicking on hole and deciding if mole is up 
 def mouseClick(event):
     if data['frames'] < 1000:
         if event.x > 75 and event.x < 275 and event.y > 75 and event.y < 275:
@@ -75,6 +75,7 @@ def mouseClick(event):
             if data ['moleUp'] == 6:
                 updateScore()
 
+#runs popup mole function, stops game, you win
 def step():
     if data['frames'] % 50 == 0 and data['frames'] < 1000:
         randomMole()
@@ -95,7 +96,6 @@ def updateScore():
 
 
 #sets up and runs the game
-
 if __name__ == '__main__':
 
     #hold variables in a dictionary
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     data['moleUp'] = 0
     scoreBox = TextAsset('Score = 0')
 
-
+#sprite everything
     Sprite(whiteCircle,(75,75))
     Sprite(whiteCircle,(325,75))
     Sprite(whiteCircle,(575,75))
@@ -115,113 +115,3 @@ if __name__ == '__main__':
     data['scoreText'] = Sprite(scoreBox,(100,575))
     App().listenMouseEvent('click', mouseClick)
     App().run(step)
-
-
-"""
-if mouse Click > (76.00813202583113, 178.9708265802269) and < (275.62544845730685, 173.85737439222044) and < 176.3286295144702 75.67909238249595
-
-
-if num > 0:
-    print(num, 'is positive')
-elif num < 0:
-    print(num, 'is negative')
-else:
-    print(num, 'is zero')
-    
-
-171.21023678545802 275.1037277147488
-324.76201865582397 176.92544570502432
-420.98780196125324 77.72447325769855
-524.3793350872996 170.78930307941653
-424.0588375986606 277.14910858995137
-575.5632623774217 170.78930307941653
-667.6943314996412 75.67909238249595
-775.1805788088974 167.72123176661265
-678.9547955034681 277.14910858995137
-76.00813202583113 421.3484602917342
-172.23391533126045 317.03403565640195
-275.62544845730685 420.32576985413294
-175.30495096866778 524.6401944894652
-325.78569720162636 425.4392220421394
-420.98780196125324 325.21555915721234
-525.4030136331021 419.3030794165316
-427.1298732360679 524.6401944894652
-575.5632623774217 420.32576985413294
-670.7653671370485 322.14748784440843
-773.1332217172925 415.2123176661264
-677.9311169576656 521.5721231766613
-
-
-def updateScore():
-    data['score'] += 10
-    data['scoreText'].destroy() #remove old writing
-    scoreBox = TextAsset('Score =' +str(data['score']))
-    data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE)) #change to circle area
-    
-#hold variables in a dictionary
-    data = {}
-    data['score'] = 0
-
-
-data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
-Mole = CircleAsset(100,blackOutline,white)
-
-
-
-#moves mole to a random location
-def moveMole():
-    data['frames'] = 0 #reset timer
-    mole.x = randint(0,COLS-1)*CELL_SIZE
-    mole.y = randint(0,ROWS-1)*CELL_SIZE
-
-#increase score and display new text at bottom of screen
-def updateScore():
-    data['score'] += 10
-    data['scoreText'].destroy() #remove old writing
-    scoreBox = TextAsset('Score =' +str(data['score']))
-    data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
-
-#keeps track of how many frames have happened and moves mole if it has
-#been more than 300 frames since last move
-def step():
-    data['frames'] +=1
-    if data['frames']%300 == 0:
-        moveBanana()
-
-#sets up and runs the game
-if __name__ == '__main__':
-    
-    #hold variables in a dictionary
-    data = {}
-    data['score'] = 0
-    data['frames'] = 0
-
-    #colors
-    moleColor = Color(0x8B4513, 1)
-    ground = Color(0xF4A460, 1)
-    yellow = Color(0xFFFF00,1)
-    
-
-
-
-    App().run()
-
-
- 
- #graphics
-    jungleBox = RectangleAsset(CELL_SIZE*COLS, CELL_SIZE*ROWS, LineStyle(1,ground),ground)
-    moleBox = CircleAsset(RADIUS,LineStyle(1,moleColor),moleColor)
-    scoreBox = TextAsset('Score = 0')
-    
-    
-    for i in range(10): #putting a row of dots
-    for j in range(12):
-        Sprite(dot,(10+(2*RADIUS)*i,10+(2*RADIUS)*j))
-    
-    Sprite(jungleBox)
-    mole = Sprite(moleBox,(CELL_SIZE*COLS/2, CELL_SIZE*ROWS/2))
-    data['scoreText'] = Sprite(scoreBox,(0,ROWS*CELL_SIZE))
-    
-
-    App().run(step)
-"""
